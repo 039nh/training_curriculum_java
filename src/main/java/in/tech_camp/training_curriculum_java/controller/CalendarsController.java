@@ -69,8 +69,11 @@ public class CalendarsController {
       day_map.put("month", currentDate.getMonthValue());
       day_map.put("date", currentDate.getDayOfMonth());
       day_map.put("plans", todayPlans);
+      // 曜日番号を計算
+      int wdayNum = (todaysDate.getDayOfWeek().getValue() + x) % 7;
 
       weekDays.add(day_map);
+      dayMap.put("wday", wdays[wdayNum]);
     }
 
     return weekDays;
